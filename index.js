@@ -17,7 +17,7 @@ var reached = false;
 var sleeping = false;
 var noSleepCommand = false;
 var day;
-var prefix = "mori"
+var prefix = process.env.prefix
 
 var location = {
     noteblockReached: false,
