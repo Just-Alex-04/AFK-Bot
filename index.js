@@ -10,6 +10,7 @@ const sleep = require('./utilities/sleep');
 
 
 var host = process.env.host;
+var port = process.env.port;
 const username = process.env.username
 const password = process.env.password
 var eating = false;
@@ -26,6 +27,7 @@ var location = {
 
 var options = {
     host: host,
+    port: port,
     username: username
 };
 
