@@ -69,11 +69,11 @@ function bindEvents(bot) {
 
     bot.on('spawn', async ()=> {
         try {
-            bot.chat('/login '+password);
             const mcData = require('minecraft-data')(bot.version)
             bot.autoEat.options.startAt = 17
             bot.autoEat.options.eatingTimeout = 3
             await sleep(1000);
+            bot.chat('/login '+password);
             var blocks = await findBlocks(bot, mcData);
             setInterval(action, 1000, mcData, blocks);
             chat(bot, mcData)
