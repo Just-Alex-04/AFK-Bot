@@ -73,7 +73,6 @@ function bindEvents(bot) {
         bot.autoEat.options.startAt = 17
         bot.autoEat.options.eatingTimeout = 3
         await sleep(1000);
-        bot.chat("[Bot] Sleep mode");
         var blocks = await findBlocks(bot, mcData);
         setInterval(action, 1000, mcData, blocks);
         chat(bot, mcData)
