@@ -87,7 +87,7 @@ function bindEvents(bot) {
         message = message.toLowerCase()
         let inCommands = isPresent(Object.keys(commands), message.split(" "))
         console.log(inCommands)
-        //if (message.includes(prefix) && !inCommands.length) bot.chat(process.env.afk)
+        if (message.includes(prefix) && !inCommands.length) bot.chat(process.env.afk)
         if (message.includes(prefix) && message == prefix+" "+inCommands) {
             commands[inCommands]()
         }
