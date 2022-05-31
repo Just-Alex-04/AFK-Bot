@@ -74,9 +74,11 @@ function bindEvents(bot) {
             bot.autoEat.options.eatingTimeout = 3
             await sleep(1000);
             bot.chat('/login '+password);
-            var blocks = await findBlocks(bot, mcData);
-            setInterval(action, 1000, mcData, blocks);
-            chat(bot, mcData)
+            bot.chat('/home home');
+            console.log("Teleported")
+            //var blocks = await findBlocks(bot, mcData);
+            //setInterval(action, 1000, mcData, blocks);
+            //chat(bot, mcData)
         } catch(err) {
             console.log("Error "+err.message)
         }
