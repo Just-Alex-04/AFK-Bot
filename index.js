@@ -74,10 +74,10 @@ function bindEvents(bot) {
             bot.autoEat.options.eatingTimeout = 3
             await sleep(1000);
             bot.chat('/login '+password);
-            bot.chat('/home home');
-            console.log("Teleported")
-            //var blocks = await findBlocks(bot, mcData);
-            //setInterval(action, 1000, mcData, blocks);
+            //bot.chat('/home home');
+            //console.log("Teleported")
+            var blocks = await findBlocks(bot, mcData);
+            setInterval(action, 1000, mcData, blocks);
             //chat(bot, mcData)
         } catch(err) {
             console.log("Error "+err.message)
@@ -122,7 +122,8 @@ async function action(mcData, blockData) {
         }
     } 
     if (bot.game.dimension == "minecraft:the_nether") {
-        playNoteBlock(bot, blockData.noteBlock.block);
+        bot.chat("/afk")
+        //playNoteBlock(bot, blockData.noteBlock.block);
     } else if(settings.autoSleep && !bot.time.isDay && !eating && !sleeping && !noSleepCommand) {
         if(!location.bedReached && !reached) await find(bot, mcData, blockData.bed.position);
         if(location.bedReached && !sleeping) {
