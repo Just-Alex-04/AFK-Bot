@@ -42,9 +42,9 @@ function isPresent(source, toCheck) {
 var commands = {
     nosleep: function () {
         if(sleeping) {
-            //bot.chat(process.env.noSleepTom);
+            bot.chat(process.env.noSleepTom);
         } else {
-            //bot.chat(process.env.noSleepToday);
+            bot.chat(process.env.noSleepToday);
             day = bot.time.day;
         }
         noSleepCommand = true;
@@ -52,15 +52,15 @@ var commands = {
         reached = false;
     },
     resumesleep: function () {
-        //bot.chat(process.env.sleepNow);
+        bot.chat(process.env.sleepNow);
         noSleepCommand = false;
         reached = false;
     },
     dimension: function () {
-        //bot.chat(bot.game.dimension);
+        bot.chat(bot.game.dimension);
     },
     foodlevel: function () {
-        //bot.chat("Food level: "+bot.food);
+        bot.chat("Food level: "+bot.food);
     },
 }
 
